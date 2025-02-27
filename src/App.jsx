@@ -2,11 +2,15 @@
 
 const App = () => {
   return (
-    <div className ="text-3xl">
-      <h2>
-        Hello world
-      </h2>
+    <main >
+       <div className="pattern"/>
+      <div className="wrapper">
+        <header>
+          <h1>Find<span className="text-gradient"> animies</span> you love smoothly! </h1>
+        </header>
+        <p>search</p>
       </div>
+      </main>
   )
 }
 
