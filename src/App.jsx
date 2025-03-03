@@ -46,12 +46,18 @@ const App = () => {
           <h1>
             Find<span className="text-gradient"> animes</span> you love
           </h1>
-        </header>
-        <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
 
-        {/* Display loading, error, or anime results */}
-        {loading && <p className="text-center">Loading...⏳</p>}
-        {error && <p className="text-center text-red-500">Error: {error} 😢</p>}
+          <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+        </header>
+
+        <section className='all-movies'>
+          <h2>All movies</h2>
+          {/* Display loading, error, or anime results */}
+          {loading && <p className="text-center">Loading...⏳</p>}
+          {error && <p className="text-center text-red-500">Error: {error} 😢</p>}
+        </section>
+
+
 
         {/* Display anime list */}
         <div className="anime-grid">
