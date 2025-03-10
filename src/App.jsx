@@ -58,7 +58,6 @@ const App = () => {
         </section>
 
 
-
         {/* Display anime list */}
         <div className="anime-grid">
           {animeList.map((anime) => (
@@ -68,9 +67,9 @@ const App = () => {
                 alt={anime.attributes.canonicalTitle}
                 className="anime-poster"
               />
-              <h2 className="anime-title">{anime.attributes.canonicalTitle}</h2>
-              <p className="anime-synopsis">{anime.attributes.synopsis}</p>
-              <p className="anime-rating">
+              <h2 className="anime-title text-white">{anime.attributes.canonicalTitle}</h2>
+              <p className="anime-synopsis text-white">{anime.attributes.synopsis}</p>
+              <p className="anime-rating text-white">
                 Rating: {anime.attributes.averageRating}
               </p>
             </div>
