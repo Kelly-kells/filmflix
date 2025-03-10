@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import Search from './components/Search';
+import Loader from './components/Loader';
 
 const App = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -53,7 +54,7 @@ const App = () => {
         <section className='all-movies'>
           <h2>All movies</h2>
           {/* Display loading, error, or anime results */}
-          {loading && <p className="text-center text-white">Loading...⏳</p>}
+          {loading && <Loader/>}
           {error && <p className="text-center text-red-500">Error: {error} 😢</p>}
         </section>
 
