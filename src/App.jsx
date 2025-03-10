@@ -53,7 +53,7 @@ const App = () => {
         <section className='all-movies'>
           <h2>All movies</h2>
           {/* Display loading, error, or anime results */}
-          {loading && <p className="text-center">Loading...⏳</p>}
+          {loading && <p className="text-center text-white">Loading...⏳</p>}
           {error && <p className="text-center text-red-500">Error: {error} 😢</p>}
         </section>
 
