@@ -34,7 +34,7 @@ const App = () => {
     if (searchTerm) {
       fetchAnime(searchTerm);
     } else {
-      setAnimeList([]); // Clear the list if searchTerm is empty
+      setAnimeList([]); 
     }
   }, [searchTerm]);
 
@@ -52,14 +52,13 @@ const App = () => {
         </header>
 
         <section className='all-movies'>
-          <h2>All movies</h2>
-          {/* Display loading, error, or anime results */}
+          <h2 className='mt -[40px]'>All movies</h2>
+          
           {loading && <Loader/>}
           {error && <p className="text-center text-red-500">Error: {error} 😢</p>}
         </section>
 
 
-        {/* Display anime list */}
         <div className="anime-grid">
           {animeList.map((anime) => (
             <div key={anime.id} className="anime-card">
