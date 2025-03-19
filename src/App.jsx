@@ -2,8 +2,15 @@ import { useState, useEffect } from 'react'
 import Search from "./components/Search"
 
 
+const API_BASE_URL = "https://anime-db.p.rapidapi.com/anime";
+
+const API_KEY = import.meta.env.VITE_anime-db_API_KEY;
 const App = () => {
   const [searchTerm, setSearchTerm] = useState("")
+
+  useEffect (() => {
+    console.log(searchTerm)
+  }, [searchTerm])
 
  
   return (
