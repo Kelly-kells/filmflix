@@ -18,12 +18,15 @@ const App = () => {
   const [errorMessage, setErrorMessage] = useState('');
   const [loading, setLoading] = useState(false); // To handle loading state
 
-  const fetchAnime = async () => {
+  const fetchAnime = async (query = '') => {
     setLoading(true);
     setErrorMessage('');
 
     try {
-      const endpoint = `${API_BASE_URL}?page=1&size=10&sortBy=ranking&sortOrder=asc`;
+      const endpoint = query
+        ? `${API_BASE_URL}?page=1&size=10&search=${query}` // Search endpoint
+        : `${API_BASE_URL}?page=1&size=10&sortBy=ranking&sortOrder=asc`; // Default endpoint
+
       console.log('Fetching from:', endpoint); // Log the endpoint
       const response = await fetch(endpoint, API_OPTIONS);
 
@@ -42,9 +45,10 @@ const App = () => {
     }
   };
 
+  // Fetch anime data when searchTerm changes
   useEffect(() => {
-    fetchAnime();
-  }, []);
+    fetchAnime(searchTerm);
+  }, [searchTerm]);
 
   return (
     <main>
